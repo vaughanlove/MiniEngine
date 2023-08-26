@@ -2,8 +2,6 @@
 
 #include "Event.hpp"
 
-#include <sstream>
-
 namespace MiniEngine {
 	class MINIENGINE_API WindowResizeEvent : public Event
 	{

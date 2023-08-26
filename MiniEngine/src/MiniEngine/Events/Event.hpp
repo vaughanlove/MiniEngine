@@ -2,9 +2,6 @@
 
 #include "../Core.hpp"
 
-#include <string>
-#include <functional>
-
 namespace MiniEngine {
 	/**
 	 * All of the different types of events that we expect. Can be expanded as needed.
