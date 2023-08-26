@@ -1,5 +1,8 @@
 #include "Application.hpp"
 
+#include "Events/ApplicationEvent.hpp"
+#include "Log.hpp"
+
 namespace MiniEngine {
 	Application::Application() {
 
@@ -10,6 +13,9 @@ namespace MiniEngine {
 	}
 
 	void Application::Run() {
+		WindowResizeEvent e(1280, 720);
+		ME_TRACE(e);
+
 		while (true);
 	}
 }

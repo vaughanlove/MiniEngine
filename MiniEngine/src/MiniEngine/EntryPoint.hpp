@@ -2,7 +2,7 @@
 
 #ifdef ME_PLATFORM_WINDOWS
 
-extern MiniEngine::Application * MiniEngine::CreateApplication();
+extern MiniEngine::Application* MiniEngine::CreateApplication();
 
 int main(int argc, char** argv) 
 {
