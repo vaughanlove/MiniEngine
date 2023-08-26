@@ -1,3 +1,4 @@
+#include "mepch.hpp"
 #include "Application.hpp"
 
 #include "Events/ApplicationEvent.hpp"
@@ -5,7 +6,7 @@
 
 namespace MiniEngine {
 	Application::Application() {
-
+		
 	}
 
 	Application::~Application() {

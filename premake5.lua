@@ -64,6 +64,9 @@ project "MiniEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "mepch.hpp"
+    pchsource "MiniEngine/src/mepch.cpp"
+
     files
     {
         "%{prj.name}/src/**.hpp",
