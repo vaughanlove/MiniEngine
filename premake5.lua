@@ -17,6 +17,7 @@ project "Sandbox"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
     files
     {
         "%{prj.name}/src/**.hpp",
@@ -26,13 +27,20 @@ project "Sandbox"
 
     includedirs
     {
-        "{prj.name}/vendor/spdlog/include",
-        "{prj.name}/src"
+        path.join(_MAIN_SCRIPT_DIR, "MiniEngine/vendor/spdlog/include"),
+        path.join(_MAIN_SCRIPT_DIR, "MiniEngine/src"),
     }
 
     links
     {
-        "MiniEngine"
+        "MiniEngine",
+        "glfw3",
+        "glfw3dll",
+    }
+
+    libdirs
+    {
+        path.join(_MAIN_SCRIPT_DIR, "depend/glfw-3.3.8/lib-vc2022")
     }
     
     filter "system:windows"
@@ -76,7 +84,19 @@ project "MiniEngine"
 
     includedirs
     {
-        "%{prj.name}/vendor/spdlog/include"
+        path.join(_MAIN_SCRIPT_DIR, "%{prj.name}/vendor/spdlog/include"),
+        path.join(_MAIN_SCRIPT_DIR, "depend/glfw-3.3.8/include"),
+    }
+
+    libdirs
+    {
+        path.join(_MAIN_SCRIPT_DIR, "depend/glfw-3.3.8/lib-vc2022")
+    }
+
+    links 
+    {
+        "glfw3",
+        "glfw3dll"
     }
     
     filter "system:windows"
