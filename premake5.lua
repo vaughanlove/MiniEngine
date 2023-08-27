@@ -26,8 +26,8 @@ project "Sandbox"
 
     includedirs
     {
-        "{prj.name}/vendor/spdlog/include",
-        "{prj.name}/src"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{prj.name}/src"
     }
 
     links
