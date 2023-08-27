@@ -1,4 +1,3 @@
-#include "mepch.hpp"
 #include "Application.hpp"
 
 #define GLFW_DLL
