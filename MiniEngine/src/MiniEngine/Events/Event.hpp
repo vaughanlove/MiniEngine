@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Core.hpp"
+#include "MiniEngine/Core.hpp"
 
 #include <string>
 #include <functional>

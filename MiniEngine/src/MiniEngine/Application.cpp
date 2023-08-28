@@ -8,26 +8,18 @@
 
 namespace MiniEngine {
 	Application::Application() {
-		
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application() {
 
 	}
 
-	void Application::Run() {
-		WindowResizeEvent e(1280, 720);
-		ME_TRACE(e);
-
-
-		glfwInit();
-		GLFWwindow* window = glfwCreateWindow(1280, 720, "MiniEngine Window", NULL, NULL);
-		glfwMakeContextCurrent(window); //this is the window OpenGL will be applied to
-
-		while (!glfwWindowShouldClose(window)) {
-			glfwSwapBuffers(window);
-			glfwWaitEvents();
+	void Application::Run() 
+	{
+		while (m_Running)
+		{
+			m_Window->OnUpdate();
 		}
-
 	}
 }

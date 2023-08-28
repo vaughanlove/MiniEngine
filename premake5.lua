@@ -14,6 +14,7 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -68,6 +69,7 @@ project "MiniEngine"
     location "MiniEngine"
     kind "SharedLib"
     language "C++"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -83,6 +85,9 @@ project "MiniEngine"
     {
         path.join(_MAIN_SCRIPT_DIR, "%{prj.name}/vendor/spdlog/include"),
         path.join(_MAIN_SCRIPT_DIR, "depend/glfw-3.3.8/include"),
+        "src",
+        "%{prj.name}/src",
+
     }
 
     libdirs
@@ -101,9 +106,11 @@ project "MiniEngine"
         staticruntime "On"
         systemversion "latest"
 
+
         defines {
             "ME_PLATFORM_WINDOWS",
             "ME_BUILD_DLL",
+            "ME_ENABLE_ASSERTS"
         }
 
         postbuildcommands
