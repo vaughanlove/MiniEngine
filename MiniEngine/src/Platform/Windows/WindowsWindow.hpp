@@ -1,7 +1,6 @@
 #pragma once
 
 #include "MiniEngine/Window.hpp"
-
 #include <GLFW/glfw3.h>
 
 namespace MiniEngine {
